@@ -1,0 +1,19 @@
+{% extends "base2.html" %}
+{% block content %}
+<body>
+    <div class="container">
+        <h1>Profile</h1>
+        <p><strong>Email:</strong> {{ user.email }}</p>
+        <p><strong>Weight:</strong> {{ user.weight }} kg</p>
+        <p><strong>Workouts Tracked:</strong> {{ workouts }}</p>
+
+        <!-- Form to Edit Weight -->
+        <form method="POST" action="{{ url_for('userdetails') }}">
+            <label for="weight">Update Weight:</label>
+            <input type="number" id="weight" name="weight" min="0.1" step="0.1" value="{{ user.weight }}" required>
+            <button type="submit" class="btn btn-primary">Update</button>
+        </form>
+
+    </div>
+</body>
+{% endblock %}

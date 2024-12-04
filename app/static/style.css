@@ -1,0 +1,146 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #a7fdfe;
+    color: #000000;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1, h3 {
+    color: #000000;
+}
+
+p, label, input, select, button {
+    font-size: 1rem;
+    color: #000000;
+}
+
+/* Navigation Bar */
+.navbar {
+    border-bottom: 2px solid #f39237;
+}
+
+.navbar-brand, .nav-link {
+    color: #000000 !important;
+    font-weight: bold;
+}
+
+.nav-link:hover {
+    color: #f39237 !important;
+}
+
+/* Cards and Content Boxes */
+.card, .workout-box {
+    background-color: #ffffff;
+    border: 1px solid #7a7a7a;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.card h3, .workout-box h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.card p, .workout-box p {
+    margin: 5px 0;
+    font-size: 1rem;
+    color: #3b3b3b;
+}
+
+/* Grid Layout */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: #f39237;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.btn-primary:hover {
+    background-color: #d9771d;
+}
+
+/* Forms */
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #f39237;
+    outline: none;
+    box-shadow: 0 0 5px rgba(243, 146, 55, 0.5);
+}
+
+/* Dropdown Suggestions */
+#exercise-suggestions {
+    display: block;
+    position: absolute;
+    z-index: 1000;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+#exercise-suggestions .dropdown-item {
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+#exercise-suggestions .dropdown-item:hover {
+    background-color: #f4f4f6;
+}
+
+/* Accessibility Improvements */
+a {
+    color: #f39237;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+/* Colorblind-Friendly Contrast */
+.e1rm-result {
+    font-weight: bold;
+    color: #004b6b;
+}
+
+.navbar-light .navbar-toggler {
+    border-color: #f39237;
+}

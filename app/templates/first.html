@@ -1,0 +1,60 @@
+{% extends 'base2.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Custom CSS -->
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <!-- Custom JS -->
+    <script src="{{ url_for('static', filename='exercise.js') }}" defer></script>
+</head>
+<body style="background-color: #a7fdfe;">
+    <div class="container">
+        <h1>Create a Workout</h1>
+        <form method="post" action="{{ url_for('first') }}">
+            {{ form.hidden_tag() }}
+            <div class="form-group position-relative">
+                <label for="exercise">Exercise</label>
+                <input type="text" id="exercise" name="exercise_input" class="form-control" autocomplete="off">
+                {{ form.workout(class="d-none", id="workout") }}
+                <div id="exercise-suggestions" class="custom-dropdown"></div>
+
+            </div>
+                <div class="exercise-details">
+                    <p id="muscle">Muscle: </p>
+                    <p id="equipment">Equipment: </p>
+                    <iframe id="video" width="250" height="200" src="" frameborder="0"></iframe>
+                </div>
+
+            <div class="form-group">
+                <label for="sets">Sets</label>
+                {{ form.sets(class="form-control") }}
+            </div>
+
+            <div class="form-group">
+                <label for="reps">Reps</label>
+                {{ form.reps(class="form-control") }}
+            </div>
+
+            <div class="form-group">
+                <label for="difficulty">Difficulty</label>
+                {{ form.difficulty(class="form-control") }}
+            </div>
+
+            <div class="form-group">
+                <label for="weight">Weight</label>
+                {{ form.weight(class="form-control") }}
+            </div>
+
+            <div class="form-group">
+                <label for="notes">Notes</label>
+                {{ form.notes(class="form-control") }}
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="background-color: #f39237; border: none;">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
+{% endblock %}

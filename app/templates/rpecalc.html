@@ -1,0 +1,31 @@
+{% extends "base2.html" %}
+{% block content %}
+<body>
+<div class="container">
+    <h1>1 Rep Max (E1RM) Calculator</h1>
+    <div id="exercise-list">
+        {% for exercise, records in exercises.items() %}
+        <div class="card">
+            <h3>{{ exercise }}</h3>
+            <div>
+                <label for="weight-{{ exercise }}">Weight:</label>
+                <select id="weight-{{ exercise }}">
+                    {% for record in records %}
+                    <option value="{{ record.weight }}" data-reps="{{ record.reps }}" data-rpe="{{ record.rpe }}">
+                        {{ record.weight }} kg for {{ record.reps }} reps @ RPE {{ record.rpe }}
+                    </option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div>
+                <p>Estimated 1RM: <span id="e1rm-{{ exercise }}" class="e1rm-result">--</span> kg</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<script src="{{ url_for('static', filename='calculator.js') }}"></script>
+</body>
+</html>
+{% endblock %}
+

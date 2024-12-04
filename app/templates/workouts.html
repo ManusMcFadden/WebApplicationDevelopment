@@ -1,0 +1,23 @@
+{% extends 'base2.html' %}
+{% block content %}
+<body>
+    <div class="container">
+        <h1>Your Workouts</h1>
+        <div class="grid">
+            {% for workout in workouts %}
+            <div class="workout-box">
+                <h3>{{ workout.exerciseName }}</h3>
+                <p><strong>Date:</strong> {{ workout.date }}</p>
+                <p><strong>Sets:</strong> {{ workout.sets }}</p>
+                <p><strong>Reps:</strong> {{ workout.reps }}</p>
+                <p><strong>Weight:</strong> {{ workout.weight }} kg</p>
+                <p><strong>Difficulty:</strong> {{ workout.difficulty }}/10</p>
+                {% if workout.notes %}
+                <p><strong>Notes:</strong> {{ workout.notes }}</p>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+{% endblock %}
